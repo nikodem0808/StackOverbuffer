@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="page.css">
+  </head>
+  <body>
+    <div id="main">
+      <div id="UI">
+        <h2><img src="images/logo32px.png" id="logo"/> <span id="appname">Stack Overbuffer</span></h2>
+        <h3>Search Query</h3>
+        <textarea id="query">scriptFailedError</textarea>
+        <h3>Tags</h3>
+        <textarea id="tags"></textarea>
+        <h3>Date and Time</h3>
+        <h3>From <input type="datetime-local" id="start"><br>To <input type="datetime-local" id="end"></h3>
+        <h3>Sort By</h3>
+        <select id="sort">
+          <option value="relevance">Relevance</option>
+          <option value="votes">Votes</option>
+          <option value="activity">Activity</option>
+          <option value="creation">Creation Date</option>
+        </select>
+        <br/><br/>
+        <button id="search">Run Search</button>
+        <button id="repeat">Bring Up Last Query</button>
+        <button id="options">Search History</button>
+      </div>
+      <div id="UI2">
+        <h2>Results</h2>
+        <button id="back">Back</button>
+        <br/><br/>
+        <iframe id="display" src="inline.html"></iframe>
+      </div>
+    </div>
+    <script src="juery.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
