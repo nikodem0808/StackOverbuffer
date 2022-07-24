@@ -59,7 +59,8 @@ $.ready.then(()=>{
     if(isNaN(parsedEndDateString)) parsedEndDateString = '';
     else parsedEndDateString = 'todate=' + parsedEndDateString + '&';
     // send request
-    fetch(encodeURI(`https://api.stackexchange.com/2.3/search/excerpts?${parsedStartDateString}${parsedEndDateString}order=desc&sort=${sort.value}&q=${query.value}&${(includeTags)?(`tagged=${tags.value}&`):('')}site=stackoverflow&pagesize=5&filter=!nKzQUR)a7v`)).then((data) => {
+    var r = 'https://api.stackexchange.com/2.3/search/' + (`excerpts?${parsedStartDateString}${parsedEndDateString}order=desc&sort=${sort.value}&q=${encodeURIComponent(query.value)}&${(includeTags)?(`tagged=${tags.value}&`):('')}site=stackoverflow&pagesize=5&filter=!nKzQUR)a7v`);
+    fetch(r).then((data) => {
       data.json().then((jason)=>{
         $('#main').css('height', '320px');
         UI2.hidden = false;
